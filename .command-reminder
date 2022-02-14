@@ -1,0 +1,16 @@
+btop                    system monitor
+musikcube               audio player
+neofetch                system info
+wttr                    weather forecast
+mapscii                 maps
+
+tty-clock               displays clock
+tail -f file            monitor file changes
+dpkg-reconfigure gdm3   switch display manager (or sddm)
+ranger                  cli file manager
+blanket                 procedural noise
+obsidian                powerful markdown editor
+fragments               gnome circle torrent downloader
+tangram                 gnome circle workspace?
+metadata cleaner        gnome circle trace file cleaner
+tai / catimg            ascii generators

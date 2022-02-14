@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+# spin wait for plasmashell to start
+while [ ! pgrep plasmashell ]; do
+    wait 1
+done
+
+# wait for plasmashell to fully load before restart, may need to be adjusted
+# based on how fast plasma loads on your system
+wait 5
+
+kquitapp5 plasmashell && kstart5 plasmashell 
