@@ -51,6 +51,7 @@ alias mapscii='telnet mapscii.me'
 alias remind='cat ~/.al1-ce_config/.command-reminder'
 alias clock='tty-clock -s -c -C 7'
 alias cmatrix='cmatrix -C blue'
+alias enter-the-shell='mpv --quiet -vo=caca .al1-ce_config/gits-op.mp4'
 
 # SERVERS
 alias server-start='python3 -m http.server 8080 --bind 127.0.0.1'
