@@ -24,7 +24,7 @@ alias ll='ls -aghl'
 
 # APPS
 # cli
-alias neofetch='neofetch --source ~/.al1-ce_config/.ascii_neofetch'
+alias neofetch='neofetch --source ~/.dotfiles/.ascii_neofetch'
 # sys
 alias nemo='nohup nemo &'
 alias kate='nohup kate &'
@@ -42,16 +42,16 @@ alias glade='nohup glade &'
 alias qtcreator='nohup qtcreator &'
 
 # ALIASES
-alias alias-update='source ~/.al1-ce_config/.bash_aliases'
-alias alias-edit='vim ~/.al1-ce_config/.bash_aliases'
+alias alias-update='source ~/.dotfiles/.bash_aliases'
+alias alias-edit='vim ~/.dotfiles/.bash_aliases'
 
 # PROGS
 alias wttr='curl wttr.in/Moscow'
 alias mapscii='telnet mapscii.me'
-alias remind='cat ~/.al1-ce_config/.command-reminder'
+alias remind='cat ~/.dotfiles/.command-reminder'
 alias clock='tty-clock -s -c -C 7'
 alias cmatrix='cmatrix -C blue'
-alias enter-the-shell='mpv --quiet -vo=caca .al1-ce_config/gits-op.mp4'
+alias enter-the-shell='mpv --quiet -vo=caca .dotfiles/gits-op.mp4'
 
 # SERVERS
 alias server-start='python3 -m http.server 8080 --bind 127.0.0.1'
