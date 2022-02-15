@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # BASH COMMANDS
-alias home='cd ~/'
 alias logoff='logout'
 alias cls='cd ~ && clear && neofetch'
 alias please='sudo $(history -p !!)'
@@ -9,6 +8,7 @@ alias ..='cd ../'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias mkdir='mkdir -pv'
+alias srcrc='source ~/.bashrc'
 
 # CONFIRMATIONS
 alias mv='mv -i'
@@ -84,10 +84,21 @@ snap-enter () {
 	exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME
 }
 
+rotate-screen () {
+    [[ $# -eq 0 ]] && printf "usage: rotate-screen [screen] [orientation]\nscreen: left, center, right\norientation: normal, left, right, inverted\n" && return 0
+    [[ "$1" == "left" ]] && xrandr --output DP-1 --rotate $2 && return 0
+    [[ "$1" == "center" ]] && xrandr --output DP-2 --rotate $2 && return 0
+    [[ "$1" == "right" ]] && xrandr --output HDMI-0 --rotate $2 && return 0
+    echo "Screen is incorrect"
+}
+
 # edex () {
 # 	cd ~/apps
 # 	./eDEX-UI-Linux-x86_64.AppImage &
 # }
+
+#               jp2a --colors --color-depth=8 --chars=" .,:;!-~=+÷*JS?#%@AX" --width="${PV_WIDTH}" "${FILE_PATH}" && exit 4
+#               jp2a --colors --color-depth=8 --chars=" ░▒▓█" --width="${PV_WIDTH}" "${FILE_PATH}" && exit 4
 
 get-defaults () {
     sudo apt install tty-clock neofetch ranger exa \
