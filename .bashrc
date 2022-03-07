@@ -114,6 +114,12 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
+# so it won't get overriden
+if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+
+# Add shell-option to ~/.inputrc to enable case-insensitive tab completion
+echo 'set completion-ignore-case On' >> ~/.inputrc
 
 # BEGIN_KITTY_SHELL_INTEGRATION
 if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
@@ -135,3 +141,4 @@ export PATH=/home/al1-ce/.cargo/bin:$PATH
 export PATH=/home/al1-ce/.local/bin:$PATH
 export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
 export PATH=/home/al1-ce/.appimages:$PATH
+export PATH=/home/al1-ce/.dotnet/:$PATH

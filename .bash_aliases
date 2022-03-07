@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# DISABLING FKN GAOMON TOUCH STRIP; TURN OFF AND RUN xinput list TO SEE WHERE IT IS NOW IF IT ISNT WORKING
+xinput disable 9
+
 # BASH COMMANDS
 alias logoff='logout'
 alias cls='cd ~ && clear && neofetch'
@@ -25,6 +28,8 @@ alias ll='ls -aghl'
 # APPS
 # cli
 alias neofetch='neofetch --source ~/.dotfiles/.ascii_neofetch'
+alias calendar='ncal -yMb'
+alias doomsday='~/.dotfiles/doomsday-clock'
 # sys
 alias nemo='nohup nemo &'
 alias kate='nohup kate &'
@@ -52,6 +57,7 @@ alias remind='cat ~/.dotfiles/.command-reminder'
 alias clock='tty-clock -s -c -C 7'
 alias cmatrix='cmatrix -C blue'
 alias enter-the-shell='mpv --quiet -vo=caca .dotfiles/gits-op.mp4'
+alias qml-launcher='nohup ~/.apps/qml-launcher/build/qml-launcher &'
 
 # SERVERS
 alias server-start='python3 -m http.server 8080 --bind 127.0.0.1'
@@ -107,8 +113,15 @@ get-defaults () {
 
 godot () {
     cd ~/Godot
-    nohup ./Godot_v3.4.2-stable_mono_x11.64 & 
+    ./Godot_* &
     cd ~
+}
+
+godot-quiet () {
+    WD=$PWD
+    cd ~/Godot
+    nohup ./Godot_* & 
+    cd $WD 
 }
 
 # EXPORTS
@@ -117,6 +130,5 @@ export HOMEBREW_NO_ENV_HINTS=TRUE
 
 # STARTUP SCRIPT
 
-cd ~
 clear
 neofetch
