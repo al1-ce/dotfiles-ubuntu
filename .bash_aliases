@@ -5,7 +5,7 @@ xinput disable 9
 
 # BASH COMMANDS
 alias logoff='logout'
-alias cls='cd ~ && clear && neofetch'
+alias cls='clear && neofetch'
 alias please='sudo $(history -p !!)'
 alias ..='cd ../'
 alias ...='cd ../..'
@@ -21,6 +21,7 @@ alias ln='ln -i'
 
 # EXA/LS
 alias ls='exa'
+alias l='ls -l'
 alias lf='ls -lF'
 alias la='ls -a'
 alias ll='ls -aghl'
@@ -31,20 +32,20 @@ alias neofetch='neofetch --source ~/.dotfiles/.ascii_neofetch'
 alias calendar='ncal -yMb'
 alias doomsday='~/.dotfiles/doomsday-clock'
 # sys
-alias nemo='nohup nemo &'
-alias kate='nohup kate &'
-alias cool-retro-term='nohup cool-retro-term &'
-alias gedit='nohup gedit &'
+# alias nemo='nohup nemo &'
+# alias kate='nohup kate &'
+# alias cool-retro-term='nohup cool-retro-term &'
+# alias gedit='nohup gedit &'
 # personal fav
-alias blanket='nohup blanket &'
+# alias blanket='nohup blanket &'
 # gnome
-alias kvantummanager='nohup kvantummanager &'
-alias store='sudo synaptic'
-alias gnome-tweaks='nohup gnome-tweaks &'
-#alias gnome-control-center='nohup gnome-control-center &'
+# alias kvantummanager='nohup kvantummanager &'
+# alias store='sudo synaptic'
+# alias gnome-tweaks='nohup gnome-tweaks &'
+# alias gnome-control-center='nohup gnome-control-center &'
 # ui creators
-alias glade='nohup glade &'
-alias qtcreator='nohup qtcreator &'
+# alias glade='nohup glade &'
+# alias qtcreator='nohup qtcreator &'
 
 # ALIASES
 alias alias-update='source ~/.dotfiles/.bash_aliases'
@@ -57,19 +58,10 @@ alias remind='cat ~/.dotfiles/.command-reminder'
 alias clock='tty-clock -s -c -C 7'
 alias cmatrix='cmatrix -C blue'
 alias enter-the-shell='mpv --quiet -vo=caca .dotfiles/gits-op.mp4'
-alias qml-launcher='nohup ~/.apps/qml-launcher/build/qml-launcher &'
+# alias qml-launcher='nohup ~/.apps/qml-launcher/build/qml-launcher &'
 
 # SERVERS
 alias server-start='python3 -m http.server 8080 --bind 127.0.0.1'
-# alias atheos-test='cd /mnt/e/git/atheos/ && python3 -m http.server 8080 --bind 127.0.0.1'
-
-# WIN NAVIGATION
-# alias win='cd /mnt/c/Users/alice'
-# alias win-git='cd /mnt/e/git'
-
-# DIRTY FIXES
-alias dbus='sudo /etc/init.d/dbus start'
-alias gnome-center-fix='gsettings reset org.gnome.ControlCenter last-panel'
 
 run-quiet () {
         [[ $# -eq 0 ]] && echo "usage: run_quiet [program] [program_arg] [output_file]" && return 0
@@ -80,14 +72,6 @@ run-quiet () {
 psearch () {
         [[ $# -eq 0 ]] && echo "Please supply process name" && return 0
         ps axu | grep -- "$1"
-}
-
-snap-init () {
-	sudo daemonize /usr/bin/unshare --fork --pid --mount-proc /lib/systemd/systemd --system-unit=basic.target
-}
-
-snap-enter () {
-	exec sudo nsenter -t $(pidof systemd) -a su - $LOGNAME
 }
 
 rotate-screen () {
@@ -103,13 +87,8 @@ rotate-screen () {
 # 	./eDEX-UI-Linux-x86_64.AppImage &
 # }
 
-#               jp2a --colors --color-depth=8 --chars=" .,:;!-~=+÷*JS?#%@AX" --width="${PV_WIDTH}" "${FILE_PATH}" && exit 4
-#               jp2a --colors --color-depth=8 --chars=" ░▒▓█" --width="${PV_WIDTH}" "${FILE_PATH}" && exit 4
-
-get-defaults () {
-    sudo apt install tty-clock neofetch ranger exa \
-        net-tools python3 nodejs golang git
-}
+#jp2a --colors --color-depth=8 --chars=" .,:;!-~=+÷*JS?#%@AX" --width="${PV_WIDTH}" "${FILE_PATH}" && exit 4
+#jp2a --colors --color-depth=8 --chars=" ░▒▓█" --width="${PV_WIDTH}" "${FILE_PATH}" && exit 4
 
 godot () {
     cd ~/Godot
@@ -130,5 +109,6 @@ export HOMEBREW_NO_ENV_HINTS=TRUE
 
 # STARTUP SCRIPT
 
-clear
-neofetch
+cls
+
+
