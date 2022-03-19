@@ -125,7 +125,7 @@ echo 'set completion-ignore-case On' >> ~/.inputrc
 GOPATH=$HOME/go
 function _update_ps1() {
     PS1="$($GOPATH/bin/powerline-go -error $?\
-	    -cwd-max-depth 1 -git-mode 'compact')"
+	    -cwd-max-depth 1 -git-mode 'simple')"
 }
 
 if [ "$TERM" != "linux" ] && [ -f "$GOPATH/bin/powerline-go" ]; then
