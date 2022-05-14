@@ -20,22 +20,17 @@ class PascalCase {
 	// thread statics changes s -> t
 	private static int t_camelCase;
 
-	// consts are controversial
-	// we have something like readonly but the thing is
-	// that we also have consts
-	// and all them needs some style
-	// so i usually do caps case for consts
-	private const int CAPS_CASE;
-	// or it might be smarter to use PascalCase for them
-	private const int PascalCaseConst;
-	// and nothing for readonly?, following public/private/static rules
+	// consts follow the same rules as usual varuables
 	private readonly int _camelCaseReadonly;
+	public const int camelCaseConst;
 
 	// naming order is:
-	public static const int ConstValue;
+	public static abstract const int constValue;
 	// or:
-	private static readonly int ReadonlyValue;
-	// visibility, isStatic, isConst, anything else, type, name
+	private static virtual readonly int s_readonlyValue;
+	// visibility, isStatic, anything else, isConst, type, name
+	// aka: 
+	// public/private/protected static abstract/virtual delegate override readonly/const int varName;
 
 	// methods usually follow the main rules for particular language
 	// so for c# it's PascalCase, for Java is camelCase, for c it's snake_case
@@ -45,19 +40,15 @@ class PascalCase {
 
 	// usually enum follows language convention
 	// but might be some exceptions
+	// for c#
 	enum PascalCase {
 		PascalCaseType1,
 		PascalCaseType2
 	}
-	// which one is right?
+	// for Dlang: 
 	enum PascalCase {
 		camelCaseType1,
 		camelCaseType2
-	}
-	// for example in flags?
-	enum PascalCaseFlags {
-		CAPS_CASE_FLAG_1,
-		CAPS_CASE_FLAG_2
 	}
 
 	// for keywords add _ in end
